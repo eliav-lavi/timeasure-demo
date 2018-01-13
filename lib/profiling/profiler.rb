@@ -10,7 +10,10 @@ module Profiling
       end
 
       def send_to_keen
-        Keen.publish_batch(measured_methods: @timing_data.prepare_for_keen)
+        { measured_methods: @timing_data.prepare_for_keen }.tap do |data|
+          Keen.publish_batch(data)
+          UpdateAnalyticsJob.perform_later(data)
+        end
       end
     end
   end
