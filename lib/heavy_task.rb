@@ -1,6 +1,8 @@
 class HeavyTask
-  def initialize(min_execution_time, max_exection_time)
-    @runtime = rand(min_execution_time..max_exection_time)
+  include Timeasure
+
+  def initialize(min_execution_time, max_execution_time)
+    @runtime = rand(min_execution_time..max_execution_time)
   end
 
   def run

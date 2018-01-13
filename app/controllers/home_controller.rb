@@ -2,8 +2,9 @@ class HomeController < ApplicationController
   def welcome
   end
 
-  def action
-    task = HeavyTask.new(1.0, 2.0).run
-    render plain: task
+  def demonstrate_single
+    Profiling::Profiler.init
+    10.times { TimeOffSubmitter.new(nil).submit }
+    Profiling::Profiler.send_to_keen
   end
 end
