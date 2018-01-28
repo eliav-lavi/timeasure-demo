@@ -23,9 +23,7 @@ module Profiling
       end
 
       def send_to_redis
-        @timing_data.prepare_for_insights.each do |event|
-          ActionCable.server.broadcast 'reported_methods_channel', event: event
-        end
+        ActionCable.server.broadcast 'reported_methods_channel', events: @timing_data.prepare_for_insights
       end
     end
   end

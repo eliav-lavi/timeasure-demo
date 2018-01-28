@@ -6,7 +6,9 @@ App.reported_methods = App.cable.subscriptions.create "ReportedMethodsChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    $('.reported-method').animate({opacity: '0.5'})
-    $('#reported-methods-table').prepend('<tr class="reported-method"><td>' + data.event.t0 + '</td><td>' + data.event.method_path + '</td><td>' + data.event.runtime + '</td></tr>');
+    $('.reported-method').animate({opacity: '0.6'})
+    $.each data.events, (i, event) ->
+      $('#reported-methods-table').prepend '<tr class="reported-method"><td>' + event.t0 + '</td><td>' + event.method_path + '</td><td>' + event.runtime + '</td></tr>'
+      return
     if $('.reported-method').length > 10
-      $('.reported-method').last().remove()
+      $('.reported-method').slice(11, -1).remove()
