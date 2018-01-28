@@ -15,6 +15,18 @@ module Profiling
           UpdateAnalyticsJob.perform_later(data)
         end
       end
+
+      def send_to_insights
+        @timing_data.prepare_for_insights.each do |event|
+          ::NewRelic::Agent.record_custom_event(event[:eventType], event.except(:eventType))
+        end
+      end
+
+      def send_to_redis
+        @timing_data.prepare_for_insights.each do |event|
+          ActionCable.server.broadcast 'reported_methods_channel', event: event
+        end
+      end
     end
   end
 end

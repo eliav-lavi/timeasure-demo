@@ -11,5 +11,9 @@ module Profiling
     def prepare_for_keen
       @reported_method_calls.map(&:prepare_for_keen)
     end
+
+    def prepare_for_insights
+      @reported_method_calls.map(&:prepare_for_insights)
+    end
   end
 end

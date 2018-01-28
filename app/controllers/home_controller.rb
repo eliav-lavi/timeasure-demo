@@ -4,9 +4,7 @@ class HomeController < ApplicationController
 
   def demonstrate_single
     Profiling::Profiler.init
-    3.times { TimeOffSubmitter.new(nil).submit }
-    Profiling::Profiler.send_to_keen
-
-    # head :ok
+    TimeOffSubmitter.new(nil).submit
+    Profiling::Profiler.send_to_redis
   end
 end

@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="https://d26b395fwzu5fz.cloudfront.net/keen-dataviz-1.1.3.css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/epoch.min.css">
   <title>Timeasure Demo</title>
 </head>
 
-<body class="skin-blue sidebar-mini">
-<h1>Timeasure</h1>
+<body>
+<div class="center jumbotron">
+  <h1>Timeasure</h1>
+</div>
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">Test</div>
+</header>
 <h2>Transparent method-level wrapper for profiling purposes</h2>
 <h3>Live demo</h3>
 
-<%= button_to 'Test demonstrate_single', home_demonstrate_single_path, method: :post %>
+<%= button_to 'Test demonstrate_single', home_demonstrate_single_path, method: :post, remote: true %>
 
+<div id='reported-methods'>
+  <table id='reported-methods-table'>
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Method Name</th>
+        <th>Runtime</th>
+      </tr>
+    </thead>
+    <tbody id='reported-methods-data'></tbody>
+  </table>
+</div>
 
-<div id="keen-example-chart"></div>
-
-<script>
-    loadAnalytics()
-</script>
 </body>
 </html>

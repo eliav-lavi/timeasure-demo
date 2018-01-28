@@ -11,6 +11,10 @@ module Profiling
       { method_path: method_path, runtime: runtime }
     end
 
+    def prepare_for_insights
+      { eventType: 'testing', t0: @t0, method_path: method_path, runtime: runtime }
+    end
+
     private
 
     def method_path
