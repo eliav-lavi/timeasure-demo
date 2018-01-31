@@ -1,35 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="css/epoch.min.css">
   <title>Timeasure Demo</title>
 </head>
 
 <body>
-<div class="center jumbotron">
-  <h1>Timeasure</h1>
+<div class="container-fluid" id="header-container">
+  <p id="title">Timeasure <i class="fa fa-hourglass-start" aria-hidden="true"></i> </p>
+  <p id="subtitle">Transparent method-level wrapper for profiling purposes in Ruby</p>
 </div>
 
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">Test</div>
-</header>
-<h2>Transparent method-level wrapper for profiling purposes</h2>
-<h3>Live demo</h3>
+<div class="container-fluid main">
+  <p>Timeasure allows you to measure the runtime your production Ruby code easily!</p>
+  <p>After a quick initial setup, Timeasure's easy-to-use interface will allow you to measure how much time does any method take to run.</p>
+  <p>Avoid the hassle of indenting your code for measurement and optimization purposes.</p>
+  <br>
+  <img src="<%= image_path('usage_demo_animation_edited.gif') %>">
+</div>
 
-<%= button_to 'Test demonstrate_single', home_demonstrate_single_path, method: :post, remote: true %>
+<div class="container-fluid main2">
+  <p>Timeasure allows you to measure the runtime your production Ruby code easily!</p>
+  <p>After a quick initial setup, Timeasure's easy-to-use interface will allow you to measure how much time does any method take to run.</p>
+  <p>Avoid the hassle of indenting your code for measurement and optimization purposes.</p>
+  <br>
+  <div class="code-example">
+    <p><span class="red-code">class</span> FriendshipLevelScorer</p>
+    <p id="usage-demo"></p>
+    <br>
+    <span class="one-tab-indent">
+      <p><span class="red-code">def</span> <span class="green-code">initialize</span>(<span class="orange-code">user_data</span>)</p>
+      <p class="two-tab-indent">@user_data <span class="red-code">=</span> user_data</p>
+      <p class="red-code">end</p>
+      <br>
+      <p><span class="red-code">def</span> <span class="green-code">score</span></p>
+      <span class="two-tab-indent">
+        <p>all_data_points <span class="red-code">=</span> do_something_heavy</p>
+        <p>all_data_without_noise <span class="red-code">=</span> do_something_that_is_considered_light_with(all_data_points)</p>
+        <p>score_from(all_data_without_noise)</p>
+      </span>
+        <p class="red-code">end</p>
+        <br>
+        <p class="red-code">private</p>
+        <br>
+      <p><span class="red-code">def</span> <span class="green-code">do_something_heavy</span></p>
+      <span class="two-tab-indent">
+        <p class="gray-code"># some querying goes here...</p>
+      </span>
+      <p class="red-code">end</p>
+      <br>
+      <p><span class="red-code">def</span> <span class="green-code">do_something_that_is_considered_light_with</span>(<span class="orange-code">data_points</span>)</p>
+      <span class="two-tab-indent">
+        <p class="gray-code"># some data wrangling goes here...</p>
+      </span>
+      <p class="red-code">end</p>
+      <br>
+      <p><span class="red-code">def</span> <span class="green-code">score_from</span>(<span class="orange-code">data</span>)</p>
+      <span class="two-tab-indent">
+        <p class="gray-code"># some machine learning stuff goes here...</p>
+      </span>
+      <p class="red-code">end</p>
+    </span>
+    <p class="red-code">end</p>
+    </p>
+  </div>
+  <!--<p id="usage-demo"></p>-->
 
-<div id='reported-methods'>
-  <table id='reported-methods-table'>
-    <thead>
+  <script>
+      new TypeIt('#usage-demo', {
+          strings: [
+              "<p><span class='one-tab-indent'><span class='red-code'>include</span> Timeasure</span></p>",
+              "<p><span class='one-tab-indent'>tracked_instance_methods <span class='purple-code'>:score</span>, <span class='purple-code'>:do_something_heavy</span>, <span class='purple-code'>:do_something_that_is_considered_light_with</span>, <span class='purple-code'>:score_from</span></span></p>",
+          ],
+          speed: 70,
+          loop: false,
+          loopDelay: 3000,
+          lifeLike: true,
+          autoStart: false
+      });
+  </script>
+</div>
+
+<div class="container-fluid main">
+  <p>To demonstrate Timeasure's abilities, this page was actually built as part of a Rails mock-app.</p>
+  <p>The app includes some made-up code that employs Timeasure and reports the collected information live back to this view.</p>
+  <br>
+  <%= button_to 'Trigger Demo Job', home_demonstrate_single_path, method: :post, remote: true, class: "btn btn-primary btn-lg" %>
+  <br>
+  <div id='reported-methods'>
+    <table class="table table-striped" id='reported-methods-table'>
+      <thead>
       <tr>
-        <th>Time</th>
-        <th>Method Name</th>
-        <th>Runtime</th>
+        <th scope="col">Time</th>
+        <th scope="col">Method Name</th>
+        <th scope="col">Runtime In Milliseconds</th>
       </tr>
-    </thead>
-    <tbody id='reported-methods-data'></tbody>
-  </table>
+      </thead>
+      <tbody id='reported-methods-data'></tbody>
+    </table>
+  </div>
 </div>
-
 </body>
 </html>

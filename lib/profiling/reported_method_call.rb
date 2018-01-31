@@ -22,7 +22,7 @@ module Profiling
     end
 
     def runtime
-      (@t1 - @t0) * 1000
+      ((@t1 - @t0) * 1000).round(3)
     end
   end
 end
