@@ -1,5 +1,7 @@
 {
   "name": "timeasure-demo",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "timeago.js": "^3.0.2"
+  }
 }

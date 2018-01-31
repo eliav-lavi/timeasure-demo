@@ -61,11 +61,11 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
-    d3-rails (4.10.2)
-      railties (>= 3.1)
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.3)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.1)
@@ -116,6 +116,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-timeago (2.16.0)
+      actionpack (>= 3.1)
+      activesupport (>= 3.1)
     railties (5.1.4)
       actionpack (= 5.1.4)
       activesupport (= 5.1.4)
@@ -176,13 +179,14 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.2)
-  d3-rails
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.4)
+  rails-timeago (~> 2.0)
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
