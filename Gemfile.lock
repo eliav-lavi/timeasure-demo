@@ -1,7 +1,7 @@
 PATH
-  remote: /Users/eliavlavi/.rvm/gems/ruby-2.4.2/gems/timeasure-0.0.1
+  remote: /Users/eliavlavi/.rvm/gems/ruby-2.4.2/gems/timeasure-0.0.5
   specs:
-    timeasure (0.0.1)
+    timeasure (0.0.5)
 
 GEM
   remote: https://rubygems.org/
