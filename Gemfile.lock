@@ -47,9 +47,10 @@ GEM
     autoprefixer-rails (7.2.5)
       execjs
     bindex (0.5.0)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+    bootstrap (4.0.0)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (9.1.0)
     coffee-rails (4.2.2)
@@ -95,6 +96,7 @@ GEM
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     pg (0.21.0)
+    popper_js (1.12.9)
     puma (3.11.0)
     rack (2.0.3)
     rack-test (0.8.2)
@@ -116,9 +118,6 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails-timeago (2.16.0)
-      actionpack (>= 3.1)
-      activesupport (>= 3.1)
     railties (5.1.4)
       actionpack (= 5.1.4)
       activesupport (= 5.1.4)
@@ -176,7 +175,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.3.6)
+  bootstrap (~> 4.0.0)
   byebug
   coffee-rails (~> 4.2)
   font-awesome-rails
@@ -186,7 +185,6 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.4)
-  rails-timeago (~> 2.0)
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

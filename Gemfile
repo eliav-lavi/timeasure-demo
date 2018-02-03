@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'timeasure' , :path => "/Users/eliavlavi/.rvm/gems/ruby-2.4.2/gems/timeasure-0.0.1"
 
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap', '~> 4.0.0'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 
