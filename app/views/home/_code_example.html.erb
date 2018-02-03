@@ -1,0 +1,54 @@
+<div class="code code-fragment">
+  <p><span class="code-keyword">class</span> FriendshipLevelScorer</p>
+  <div class="code-class-body">
+    <p id="usage-demo"></p>
+    <br>
+    <p><span class="code-keyword">def</span> <span class="code-method-name">initialize</span>(<span class="code-argument">user_data</span>)</p>
+    <p class="code-method-body">@user_data <span class="code-keyword">=</span> user_data</p>
+    <p class="code-keyword">end</p>
+    <br>
+    <p><span class="code-keyword">def</span> <span class="code-method-name">score</span></p>
+    <span class="code-method-body">
+      <p>all_data_points <span class="code-keyword">=</span> something_heavy</p>
+      <p>all_data_without_noise <span class="code-keyword">=</span> something_lighter_with(all_data_points)</p>
+      <p>score_from(all_data_without_noise)</p>
+    </span>
+    <p class="code-keyword">end</p>
+    <br>
+    <p class="code-keyword">private</p>
+    <br>
+    <p><span class="code-keyword">def</span> <span class="code-method-name">something_heavy</span></p>
+    <span class="code-method-body">
+      <p class="code-comment"># some querying goes here...</p>
+    </span>
+    <p class="code-keyword">end</p>
+    <br>
+    <p><span class="code-keyword">def</span> <span class="code-method-name">something_lighter_with</span>(<span class="code-argument">data_points</span>)</p>
+    <span class="code-method-body">
+      <p class="code-comment"># some data wrangling goes here...</p>
+    </span>
+    <p class="code-keyword">end</p>
+    <br>
+    <p><span class="code-keyword">def</span> <span class="code-method-name">score_from</span>(<span class="code-argument">data</span>)</p>
+    <span class="code-method-body">
+      <p class="code-comment"># some machine learning stuff goes here...</p>
+    </span>
+    <p class="code-keyword">end</p>
+  </div>
+  <p class="code-keyword">end</p>
+</div>
+
+
+<script>
+    new TypeIt('#usage-demo', {
+        strings: [
+            "<p><span><span class='code-keyword'>include</span> Timeasure</span></p>",
+            "<p><span>tracked_instance_methods <span class='code-symbol'>:score</span>, <span class='code-symbol'>:something_heavy</span>, <span class='code-symbol'>:something_lighter_with</span>, <span class='code-symbol'>:score_from</span></span></p>",
+        ],
+        speed: 80,
+        loop: false,
+        loopDelay: 200,
+        lifeLike: true,
+        autoStart: false
+    });
+</script>

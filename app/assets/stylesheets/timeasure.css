@@ -1,82 +1,135 @@
 body {
-    font-family: "Avenir";
+    font-family: "Avenir", Helvetica, Arial, sans-serif;;
     font-size: large;
 }
 
+.navbar {
+    padding-left: 16rem;
+    padding-right: 16rem;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.nav-link {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .15rem;
+    margin-left: 1.2rem;
+}
+
 .container-fluid {
-    background: #f5f5f5;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-    padding-left: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 7rem;
+    padding-left: 16rem;
+    padding-right: 16rem;
 }
 
-#title {
-    font-size: 7em;
+#header-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 0%;
+    padding-left: 0%;
+    align-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-#subtitle {
-    font-size: 2em;
+.title {
+    font-size: 3.5em;
+    font-weight: 300;
+    letter-spacing: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.75em;
+    font-weight: 300;
+    letter-spacing: -.1rem;
 }
 
 #subheader {
     width: 500px;
 }
 
-#header-container {
-    position: relative;
-    display: table;
-    width: 100%;
-    height: auto;
-    /*background: url(hourglass.jpeg);*/
-    /*background-position: center center;*/
-    /*background-size: 1500px;*/
+#social-media-buttons-row{
+    padding-bottom: 3rem;
 }
 
-.main {
-    background: #ececec;
+.product-value-intro {
+    width: 66%;
+    text-align: center;
 }
 
-.main2 {
-    background: #e5e5e5;
+#product-value-intro-header {
+    margin-bottom: 1rem;
+}
+
+.container-fluid:nth-child(even) {
+    background: #f6f6f6;
+}
+
+.container-fluid:nth-child(odd) {
+    background: #f1f1f1;
+}
+
+.content-block {
+    width: 65%;
+}
+
+.section-title {
+    margin-bottom: 2rem;
+    letter-spacing: 0.25rem;
+    font-weight: 600;
 }
 
 #reported-methods-table {
-    font-size: xx-small;
+    width: 85%;
+    font-size: medium;
 }
 
-.code-example {
-    width: 70%;
-    padding: 2em;
-    font-family: 'Courier New';
+.code {
+    padding: 0.1rem;
+    font-family: 'Menlo', monospace;
     font-size: small;
     color: white;
     background-color: #272822;
 }
 
-.red-code {
+.code-fragment {
+    width: 75%;
+    padding: 2em;
+    border-radius: 8px;
+}
+
+.code-fragment p {
+    margin: 0.3%;
+}
+
+.code-keyword {
     color: #f92672;
 }
 
-.purple-code {
+.code-symbol {
     color: #9775f0;
 }
 
-.green-code {
+.code-method-name {
     color: #a1cd2a;
 }
 
-.orange-code {
+.code-argument {
     color: #f38820;
+    font-style: italic;
 }
 
-.gray-code {
+.code-comment {
     color: #726f5c;
 }
 
-.one-tab-indent {
-    text-indent: 2%;
+.code-class-body {
+    padding-left: 2%;
 }
 
-.two-tab-indent {
-    text-indent: 4%;
+.code-method-body {
+    text-indent: 2%;
 }

@@ -2,85 +2,109 @@
 <html>
 <head>
   <title>Timeasure Demo</title>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 
 <body>
-<div class="container-fluid" id="header-container">
-  <p id="title">Timeasure <i class="fa fa-hourglass-start" aria-hidden="true"></i> </p>
-  <p id="subtitle">Transparent method-level wrapper for profiling purposes in Ruby</p>
-</div>
 
-<div class="container-fluid main">
-  <p>Timeasure allows you to measure the runtime your production Ruby code easily!</p>
-  <p>After a quick initial setup, Timeasure's easy-to-use interface will allow you to measure how much time does any method take to run.</p>
-  <p>Avoid the hassle of indenting your code for measurement and optimization purposes.</p>
-  <br>
-  <img src="<%= image_path('usage_demo_animation_edited.gif') %>">
-</div>
-
-<div class="container-fluid main2">
-  <p>Timeasure allows you to measure the runtime your production Ruby code easily!</p>
-  <p>After a quick initial setup, Timeasure's easy-to-use interface will allow you to measure how much time does any method take to run.</p>
-  <p>Avoid the hassle of indenting your code for measurement and optimization purposes.</p>
-  <br>
-  <div class="code-example">
-    <p><span class="red-code">class</span> FriendshipLevelScorer</p>
-    <p id="usage-demo"></p>
-    <br>
-    <span class="one-tab-indent">
-      <p><span class="red-code">def</span> <span class="green-code">initialize</span>(<span class="orange-code">user_data</span>)</p>
-      <p class="two-tab-indent">@user_data <span class="red-code">=</span> user_data</p>
-      <p class="red-code">end</p>
-      <br>
-      <p><span class="red-code">def</span> <span class="green-code">score</span></p>
-      <span class="two-tab-indent">
-        <p>all_data_points <span class="red-code">=</span> do_something_heavy</p>
-        <p>all_data_without_noise <span class="red-code">=</span> do_something_that_is_considered_light_with(all_data_points)</p>
-        <p>score_from(all_data_without_noise)</p>
-      </span>
-        <p class="red-code">end</p>
-        <br>
-        <p class="red-code">private</p>
-        <br>
-      <p><span class="red-code">def</span> <span class="green-code">do_something_heavy</span></p>
-      <span class="two-tab-indent">
-        <p class="gray-code"># some querying goes here...</p>
-      </span>
-      <p class="red-code">end</p>
-      <br>
-      <p><span class="red-code">def</span> <span class="green-code">do_something_that_is_considered_light_with</span>(<span class="orange-code">data_points</span>)</p>
-      <span class="two-tab-indent">
-        <p class="gray-code"># some data wrangling goes here...</p>
-      </span>
-      <p class="red-code">end</p>
-      <br>
-      <p><span class="red-code">def</span> <span class="green-code">score_from</span>(<span class="orange-code">data</span>)</p>
-      <span class="two-tab-indent">
-        <p class="gray-code"># some machine learning stuff goes here...</p>
-      </span>
-      <p class="red-code">end</p>
-    </span>
-    <p class="red-code">end</p>
-    </p>
+<nav class="navbar navbar-expand sticky-top navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#what-is-timeasure">WHAT IS TIMEASURE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#motivation">MOTIVATION</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#live-demo">LIVE DEMO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#configuration">CONFIGURATION</a>
+      </li>
+    </ul>
   </div>
-  <!--<p id="usage-demo"></p>-->
+</nav>
 
-  <script>
-      new TypeIt('#usage-demo', {
-          strings: [
-              "<p><span class='one-tab-indent'><span class='red-code'>include</span> Timeasure</span></p>",
-              "<p><span class='one-tab-indent'>tracked_instance_methods <span class='purple-code'>:score</span>, <span class='purple-code'>:do_something_heavy</span>, <span class='purple-code'>:do_something_that_is_considered_light_with</span>, <span class='purple-code'>:score_from</span></span></p>",
-          ],
-          speed: 70,
-          loop: false,
-          loopDelay: 3000,
-          lifeLike: true,
-          autoStart: false
-      });
-  </script>
+<div class="container-fluid" id="header-container">
+  <div class="row">
+    <i class="fa fa-hourglass-start fa-3x" aria-hidden="true"></i>
+  </div>
+  <div class="row">
+    <p class="title">TIMEASURE</p>
+  </div>
+  <div class="row">
+    <p class="subtitle">Measure the runtime of your Ruby code in production, easily.</p>
+  </div>
+  <div class="row" id="social-media-buttons-row">
+    <div class="col">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+    </div>
+    <div class="col">
+      <a href="https://github.com/riskified/timeasure" class="github-button" data-icon="octicon-star" aria-label="Star riskified/timeasure on GitHub">Star</a>
+    </div>
+  </div>
+
+  <div class="row product-value-intro" id="product-value-intro-header">
+    <div class="col-3">
+      <i class="fa fa-code fa-2x"></i>
+    </div>
+    <div class="col">
+    </div>
+    <div class="col-3">
+      <i class="fa fa-area-chart fa-2x"></i>
+    </div>
+    <div class="col">
+    </div>
+    <div class="col-3">
+      <i class="fa fa-thumbs-up fa-2x"></i>
+    </div>
+  </div>
+  <div class="row product-value-intro">
+    <div class="col-3">
+      Track specific methods in your application with Timeasure's elegant class macros
+    </div>
+    <div class="col align-middle">
+      <i class="fa fa-arrow-circle-right fa-2x"></i>
+    </div>
+    <div class="col-3">
+      Report the collected timing data to an analytics framework of your choice (NewRelic, Google Analytics, Keen...)
+    </div>
+    <div class="col">
+      <i class="fa fa-arrow-circle-right fa-2x"></i>
+    </div>
+    <div class="col-3">
+      Make informed decisions and aim at the most beneficial runtime optimization tasks
+    </div>
+  </div>
 </div>
 
-<div class="container-fluid main">
+<div class="container-fluid" id="what-is-timeasure">
+  <div class="content-block">
+    <p class="section-title">WHAT IS TIMEASURE</p>
+    <p>Timeasure is a Ruby gem that allows measuring the runtime of methods in production without having to alter the
+      code of the methods themselves.
+      To achieve that, Timeasure offers elegant class macros, similar in syntax to
+      Ruby's <span class="code">attr_accessor</span> or Rails' <span class="code">validates_uniquness_of</span>.</p>
+    <p>Timeasure handles the runtime measurement of declared tracked methods - whatever to do with the measurements is
+    for the user to configure. It is recommended to report the timing data to some profiler
+      and eventually - perhaps at the end of each transaction - to an analytics framework that allows insights gathering.
+      Timeasure was designed with <a href="https://insights.newrelic.com/" target="_blank">NewRelic insights</a> as the "<i>inspiration
+      on the other end</i>", but it is generic enough to fit to other analytics frameworks.</p>
+    <p>Below is a possible usage of Timeasure within a given class.
+      Notice how the declaration of which methods to track only changes the code at the top of the class while the
+      tracked methods remain intact:</p>
+  </div>
+  <%= render 'code_example' %>
+</div>
+
+<div class="container-fluid" id="motivation">
+  <p class="section-title">MOTIVATION</p>
+</div>
+
+<div class="container-fluid" id="live-demo">
+  <p class="section-title">LIVE DEMO</p>
   <p>To demonstrate Timeasure's abilities, this page was actually built as part of a Rails mock-app.</p>
   <p>The app includes some made-up code that employs Timeasure and reports the collected information live back to this view.</p>
   <br>
@@ -90,14 +114,18 @@
     <table class="table table-striped" id='reported-methods-table'>
       <thead>
       <tr>
-        <th scope="col">Time</th>
-        <th scope="col">Method Name</th>
-        <th scope="col">Runtime In Milliseconds</th>
+        <th scope="col" style="width: 220px">Time</th>
+        <th scope="col" style="min-width: 200px">Method Name</th>
+        <th scope="col" style="width: 220px">Runtime In Milliseconds</th>
       </tr>
       </thead>
       <tbody id='reported-methods-data'></tbody>
     </table>
   </div>
+</div>
+
+<div class="container-fluid" id="configuration">
+  <p class="section-title">CONFIGURATION</p>
 </div>
 </body>
 </html>
