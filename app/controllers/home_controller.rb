@@ -2,9 +2,10 @@ class HomeController < ApplicationController
   def welcome
   end
 
-  def demonstrate_single
-    Profiling::Profiler.init
+  def run_demo_job
+    Timeasure::Profiling::Manager.prepare
     TimeOffSubmitter.new(nil).submit
-    Profiling::Profiler.send_to_redis
+
+    ActionCable.server.broadcast 'reported_methods_channel', events: Timeasure::Profiling::Manager.export
   end
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root to: 'home#welcome'
 
-  post 'home/demonstrate_single' => 'home#demonstrate_single'
+  post 'home/run_demo_job' => 'home#run_demo_job'
 end
