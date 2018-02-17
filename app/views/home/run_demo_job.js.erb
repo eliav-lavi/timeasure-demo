@@ -1,0 +1,5 @@
+$('.reported-method').fadeTo(1000, 0.2)
+<% @events.each do |event| %>
+  $('#reported-methods-table').prepend('<tr class="reported-method"><td><%= event.klass_name %></td><td><%= event.method_name %></td><td><%= event.call_count %></td><td><%= event.runtime_sum.round(2) %></td></tr>')
+  if($('.reported-method').length > 10) { $('.reported-method').slice(11, -1).remove() }
+<% end %>

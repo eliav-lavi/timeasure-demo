@@ -89,15 +89,17 @@
     <p>
       We strive to build fast and efficient web applications and web services.
       The need for speed might derive from contractual obligations, ongoing product improvement efforts,
-      or the very desire to write better code.
+      or the very desire to write better, faster code.
       Measuring the production runtime of different methods in different classes and analyzing this data is crucial
       in the process of optimizing the agility of any application's backend parts.
     </p>
     <p>
-      Timeasure was created in order to make the collection of this data easy and organized.
+      Timeasure was created in order to make the gathering of this data easy and organized.
       Instead of modifying the methods you wish to measure, handling the results of measurements and along the way
       indenting many lines of code, Timeasure offers simple class macros that help with separating the concern of
-      methods measurement from the methods themselves.
+      methods measurement from the methods themselves. In addition, Timeasure offers a default profiling manager
+      that keeps track of reported methods in an aggregated way. This part is configurable, should you want to use another
+      tool to aggregate measurement data.
     </p>
   </div>
 </div>
@@ -124,8 +126,33 @@
   </div>
 </div>
 
-<div class="container-fluid" id="configuration">
-  <p class="section-title">CONFIGURATION</p>
+<div class="container-fluid" id="usage">
+  <p class="section-title">USAGE</p>
+  <div class="section-content">
+    <p class="section-title section-sub-title">TIMEASURE COMPONENTS</p>
+    <p>
+      Timeasure is consisted of the core method measuring aspect and of a profiler, which gathers the measured methods
+      runtime data. After adding Timeasure to your projects Gemfile, you may track methods easily as demonstrated
+      in the <a href="#what-is-timeasure">What is Timeasure</a> section.
+    </p>
+    <br>
+    <p class="section-title section-sub-title">REPORTING A METHOD CALL</p>
+    <p>
+      By default, any tracked method will report
+      its runtime to Timeasure's profiler - <span class="code">Timeasure::Profiling::Manager</span>.
+      What this means to you is that you are responsible of managing the clean-up and the reporting of the aggregated data.
+      It is recommended to prepare the profiler at the beginning of a transaction in which tracked methods exist with
+      <span class="code">Timeasure::Profiling::Manager.prepare</span> and to re-prepare it again at the end of
+      the transaction to ensure a "clean slate" - after you have handled the aggregated data in some way.
+    </p>
+    <br>
+    <p class="section-title section-sub-title">EXPORTING ALL METHOD CALLS</p>
+    <p>
+      In order to get hold of the reported methods, use <span class="code">Timeasure::Profiling::Manager.export</span>.
+      This will return an array of <span class="code">ReportedMethod</span> objects. See here for further information.
+    </p>
+    <p><a href="https://github.com/Riskified/timeasure#usage" target="_blank">Have a look at the README for further details</a></p>
+  </div>
 </div>
 </body>
 </html>

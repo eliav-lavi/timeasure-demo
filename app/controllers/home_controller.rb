@@ -4,8 +4,10 @@ class HomeController < ApplicationController
 
   def run_demo_job
     Timeasure::Profiling::Manager.prepare
-    TimeOffSubmitter.new(nil).submit
+    injected_qux = Qux.new
+    Foo.new(injected_qux).bar
 
-    ActionCable.server.broadcast 'reported_methods_channel', events: Timeasure::Profiling::Manager.export
+    @events = Timeasure::Profiling::Manager.export
+    respond_to :js
   end
 end

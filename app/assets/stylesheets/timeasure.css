@@ -75,7 +75,7 @@ body {
 }
 
 .section-content {
-    width: 65%;
+    width: 75%;
 }
 
 .section-title {
@@ -84,9 +84,18 @@ body {
     font-weight: 600;
 }
 
+.section-sub-title {
+    font-size: 0.7rem;
+    margin-bottom: 0rem;
+}
+
 #reported-methods-table {
     width: 85%;
     font-size: medium;
+}
+
+.reported-method td {
+    padding: 0.25rem;
 }
 
 .code {
