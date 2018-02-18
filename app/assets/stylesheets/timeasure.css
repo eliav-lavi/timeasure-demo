@@ -20,7 +20,7 @@ body {
 
 .container-fluid {
     padding-top: 4rem;
-    padding-bottom: 7rem;
+    padding-bottom: 5rem;
     padding-left: 16rem;
     padding-right: 16rem;
 }
@@ -52,6 +52,11 @@ body {
 
 #subheader {
     width: 500px;
+}
+
+#footer {
+    font-size: smaller;
+    line-height: 0.7rem;
 }
 
 #social-media-buttons-row{
@@ -98,6 +103,10 @@ body {
 .reported-method td {
     padding: 0.25rem;
     padding-left: 1.5rem;
+}
+
+#new-relic-graph {
+    width: 50vw;
 }
 
 .code {

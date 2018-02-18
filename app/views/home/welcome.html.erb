@@ -102,24 +102,32 @@
 
 <div class="container-fluid" id="live-demo">
   <p class="section-title">LIVE DEMO</p>
-  <p>To demonstrate Timeasure's abilities, this page was actually built as part of a Rails mock-app.</p>
-  <p>The app includes some made-up code that serves as an imaginary job.
-    It is measured by Timeasure and reports the collected information back to this view, right at the end of the transaction.</p>
-  <br>
-  <%= button_to 'Trigger Demo Job', home_run_demo_job_path, method: :post, remote: true, class: "btn btn-primary btn-lg" %>
-  <br>
-  <div id='reported-methods'>
-    <table class="table table-striped" id='reported-methods-table'>
-      <thead>
-      <tr>
-        <th scope="col" style="width: 220px">Class Name</th>
-        <th scope="col" style="min-width: 200px">Method Name</th>
-        <th scope="col" style="width: 220px">Call Count</th>
-        <th scope="col" style="width: 220px">Runtime In Milliseconds</th>
-      </tr>
-      </thead>
-      <tbody id='reported-methods-data'></tbody>
-    </table>
+  <div class="section-content">
+    <p>To demonstrate Timeasure's abilities, this page was actually built as part of a Rails mock-app.</p>
+    <p>The app includes some made-up code that serves as an imaginary job.
+      It is measured by Timeasure and reports the collected information back to this view, right at the end of the transaction.</p>
+    <br>
+    <%= button_to 'Trigger Demo Job', home_run_demo_job_path, method: :post, remote: true, class: "btn btn-primary btn-lg" %>
+    <br>
+    <div id='reported-methods'>
+      <table class="table table-striped" id='reported-methods-table'>
+        <thead>
+        <tr>
+          <th scope="col" style="width: 220px">Class Name</th>
+          <th scope="col" style="min-width: 200px">Method Name</th>
+          <th scope="col" style="width: 220px">Call Count</th>
+          <th scope="col" style="width: 220px">Runtime Sum (ms)</th>
+        </tr>
+        </thead>
+        <tbody id='reported-methods-data'></tbody>
+      </table>
+    </div>
+    <br>
+    <p>
+      To gain useful knowledge from this information, it is recommended to send it to some analytics framework.
+      For example, on NewRelic Insights, it might look like this:
+      <%= image_tag 'new_relic_graph.png', id: 'new-relic-graph' %>
+    </p>
   </div>
 </div>
 
@@ -150,6 +158,12 @@
     </p>
     <p><a href="https://github.com/Riskified/timeasure#usage" target="_blank">Have a look at the README for further details</a></p>
   </div>
+</div>
+
+
+<div class="container-fluid" id="footer">
+  <p><a href="https://github.com/Riskified/timeasure" target="_blank">Github repository</a> / <a href="https://rubygems.org/gems/timeasure/" target="_blank">RubyGems page</a></p>
+  <p>Created and maintained by <a href="http://www.eliavlavi.com" target="_blank">Eliav Lavi</a> & <a href="https://www.riskified.com" target="_blank">Riskified</a> / Inspired by <a href="https://pragprog.com/book/ppmetr2/metaprogramming-ruby-2" target="_blank">Metaprogramming Ruby 2</a> & <a href="https://hashrocket.com/blog/posts/module-prepend-a-super-story" target="_blank">Hashrocket</a></p>
 </div>
 </body>
 </html>
