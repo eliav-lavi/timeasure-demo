@@ -96,7 +96,7 @@ body {
 }
 
 #reported-methods-table {
-    width: 85%;
+    /*width: 100%;*/
     font-size: medium;
 }
 
@@ -107,6 +107,7 @@ body {
 
 #new-relic-graph {
     width: 50vw;
+    padding-top: 2rem;
 }
 
 .code {
