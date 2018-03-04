@@ -63,9 +63,11 @@
   <p class="section-title">WHAT IS TIMEASURE</p>
   <div class="section-content">
     <p>Timeasure is a Ruby gem created and maintained by <a href="http://www.eliavlavi.com" target="_blank">Eliav Lavi</a> & <a href="https://www.riskified.com" target="_blank">Riskified</a>.
-      Timeasure allows measuring the runtime of methods in production without having to alter the
-      code of the methods themselves.
-      To achieve that, Timeasure offers elegant class macros, similar in syntax to
+      Timeasure allows measuring the runtime of methods without having to alter the
+      code of the methods themselves. Timeasure is intended to be used in production environments in order to achieve
+      a real picture of methods' runtime. It is indeed used in production in Riskified, however please note that it is still in its
+      pre-release period, so please take extra care and check it locally before deploying to production.</p>
+      <p>To achieve an easy and intuitive interface, Timeasure offers elegant class macros, similar in syntax to
       Ruby's <span class="code">attr_accessor</span> or Rails' <span class="code">validates_uniquness_of</span>.</p>
     <p>Timeasure handles the runtime measurement of declared tracked methods and aggregates them on the method level.
        It is recommended to report this data to an analytics framework that allows insights gathering the end of transaction.
