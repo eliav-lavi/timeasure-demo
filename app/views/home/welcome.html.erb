@@ -109,6 +109,9 @@
     <p>To demonstrate Timeasure's abilities, this page was actually built as part of a Rails mock-app.</p>
     <p>The app includes some made-up code that serves as an imaginary job.
       It is measured by Timeasure and reports the collected information back to this view, right at the end of the transaction.</p>
+    <p>
+      See the source code of the demo job <a href="https://github.com/eliav-lavi/timeasure-demo/blob/master/app/controllers/home_controller.rb" target="_blank">here</a>.
+    </p>
     <br>
     <%= button_to 'Trigger Demo Job', home_run_demo_job_path, method: :post, remote: true, class: "btn btn-primary btn-lg" %>
     <br>
