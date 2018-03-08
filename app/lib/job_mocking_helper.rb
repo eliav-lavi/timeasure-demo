@@ -8,9 +8,9 @@ module JobMockingHelper
       when :a_little
         rand(10)/1000.to_f
       when :some
-        rand(50)/1000.to_f
+        rand(30)/1000.to_f
       when :a_lot
-        rand(200)/1000.to_f
+        rand(80)/1000.to_f
     end
   end
 
